@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+actor Cliente
+actor Administrador
+
+rectangle "Sistema de E-commerce" {
+    (Registrarse)
+    (Buscar productos)
+    (Agregar al carrito)
+    (Realizar compra)
+    (Pagar)
+    (Gestionar productos)
+    (Ver reportes)
+}
+
+Cliente --> (Registrarse)
+Cliente --> (Buscar productos)
+Cliente --> (Agregar al carrito)
+Cliente --> (Realizar compra)
+(Realizar compra) --> (Pagar)
+Administrador --> (Gestionar productos)
+Administrador --> (Ver reportes)
+' Diagrama de Casos de Uso: Sistema de E-commerce
+rectangle "Sistema de E-commerce" {
+' Diagrama de Casos de Uso: Sistema de E-commerce
+actor Cliente
+actor Administrador
+
+Cliente --> (Registrarse)
+Cliente --> (Buscar productos)
+Cliente --> (Agregar al carrito)
+Cliente --> (Realizar compra)
+(Realizar compra) --> (Pagar)
+Administrador --> (Gestionar productos)
+Administrador --> (Ver reportes)
+@enduml

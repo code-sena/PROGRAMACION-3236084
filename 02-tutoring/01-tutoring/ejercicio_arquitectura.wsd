@@ -1,0 +1,16 @@
+@startuml arquitectura_general
+' Diagrama de Arquitectura General: Sistema de E-commerce
+package "Frontend" {
+  [WebApp]
+}
+package "Backend" {
+  [API REST]
+  [Autenticación]
+}
+package "Base de Datos" {
+  [DB MySQL]
+}
+[WebApp] --> [API REST] : HTTP/HTTPS
+[API REST] --> [Autenticación]
+[API REST] --> [DB MySQL]
+@enduml

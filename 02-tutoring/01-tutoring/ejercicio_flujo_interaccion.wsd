@@ -1,0 +1,21 @@
+@startuml flujo_interaccion
+' Diagrama de Flujo de Interacción: Proceso de Compra
+actor Cliente
+participant "WebApp" as Web
+participant "API REST" as API
+participant "DB MySQL" as DB
+
+Cliente -> Web: Selecciona producto
+Web -> API: Solicita detalles producto
+API -> DB: Consulta producto
+DB --> API: Retorna datos
+API --> Web: Retorna detalles
+Cliente -> Web: Agrega al carrito
+Web -> API: Envía carrito
+API -> DB: Guarda carrito
+Cliente -> Web: Realiza compra
+Web -> API: Solicita compra
+API -> DB: Registra compra
+API --> Web: Confirmación
+Web --> Cliente: Muestra confirmación
+@enduml
